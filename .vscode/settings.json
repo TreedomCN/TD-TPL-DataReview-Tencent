@@ -1,0 +1,3 @@
+{
+    "editor.formatOnSave": false, // 关闭保存文件自动格式化代码
+}

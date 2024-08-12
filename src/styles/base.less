@@ -1,0 +1,160 @@
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, Tahoma, Simsun, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  vertical-align: baseline;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  line-height: 1;
+  -webkit-touch-callout: none;
+  -webkit-text-size-adjust: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* rem，vw，vh使用注意 
+
+1、IE9及以上支持rem，但9-10伪类不支持rem
+2、iOS8及以上全线支持vw, vh, vmin, vmax
+3、IE9及以上支持vw，vh，不支持vmax，vmin
+4、Android4.4以上全线支持
+
+*/
+
+/* 兼容不支持vw的设备---start */
+html {
+  font-size: 50PX;
+}
+
+@media screen and (max-width: 768px) and (min-width: 414px) {
+  html {
+    font-size: 55.2PX;
+  }
+}
+
+/* 兼容不支持vw的设备---end */
+
+/* 设计稿750px对应100vw 倍率100 */
+html {
+  font-size: 13.3333333333333vw;
+}
+
+@media screen and (max-height: 600px) and (min-height: 310px) {
+  html {
+    font-size: 12.33333vw;
+  }
+}
+
+// 横屏
+// 安全区1130*680
+// @media all and (max-aspect-ratio: ~'131/68') and (orientation: portrait) and (max-height: 680px) {
+//   html {
+//     font-size: 7.6vh;
+//   }
+// }
+
+// @media all and (max-aspect-ratio: ~'131/68') and (orientation: portrait) and (min-width: 414px) {
+//   html {
+//     font-size: 7.6vh;
+//   }
+// }
+
+// @media all and (max-aspect-ratio: ~'131/68') and (orientation:landscape) {
+//   html {
+//     font-size: 7.25vw;
+//   }
+// }
+
+// @media all and (min-aspect-ratio: ~'131/68') and (orientation:landscape) {
+//   html {
+//     font-size: 14.7vh;
+//   }
+// }
+
+@media all and (min-aspect-ratio: ~'1334/646') and (orientation:landscape) {
+  html {
+    font-size: 6.25vw;
+  }
+}
+
+@media all and (max-aspect-ratio: ~'1334/646') and (orientation:landscape) {
+  html {
+    font-size: 13.33vh;
+  }
+}
+
+
+// 竖屏布局相关，慎删；
+.m_vertical {
+  transform-origin: center center;
+
+  .m_wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+// 横屏布局相关，慎删；
+.m_horizontal {
+  transform-origin: center center;
+  transform: rotate(90deg);
+
+  .m_wrap {
+    position: relative;
+    overflow: hidden;
+    width: 100vh;
+    height: 100vw;
+  }
+}
+
+// 横屏
+@media all and (orientation:landscape) {
+  html {
+    .m_horizontal {
+      transform: rotate(0deg);
+
+      .m_wrap {
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+
+    .m_share-wrap {
+      .content-text {
+        left: auto;
+        right: 40px;
+      }
+
+      .content-img {
+        left: auto;
+        right: 0px;
+        transform: scaleX(1);
+      }
+    }
+  }
+}

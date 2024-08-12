@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>boilerplate-vite-vue-ts-h5</title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="Tencent-CP" />
+    <meta name="Copyright" content="Tencent" />
+    <meta name="Keywords" content="boilerplate" />
+    <meta itemprop="description" name="Description" content="boilerplate" />
+    <meta itemprop="name" content="" />
+    <meta itemprop="image" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 页面设计：cp | 页面制作：cp | 创建：2023-11-14 -->
+  </head>
+
+  <body>
+    <!-- VUE 模式 start -->
+    <div id="app"></div>
+    <!-- VUE 模式 end -->
+
+    <!-- 竖屏页 -->
+    <div class="m_vertical">
+      <div class="m_wrap">
+        <div>竖屏页</div>
+      </div>
+    </div>
+
+    <!-- 横屏页 -->
+    <div class="m_horizontal">
+      <div class="m_wrap fcter">
+        <div>横屏页</div>
+      </div>
+    </div>
+
+    <!-- loading小动画 -->
+    <div class="m-icon-loading absf">
+      <div class="inner abcter">
+        <svg class="abcter" version="1.1" id="loader-1" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50">
+          <path
+            fill="#000"
+            d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z"
+          >
+            <animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite" />
+          </path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- 信息提示弹窗 -->
+    <div class="m-msg">
+      <div class="container"></div>
+    </div>
+
+    <script src="/lib/zepto.modules.min.js"></script>
+    <script type="module" src="/src/main.ts"></script>
+
+    <script>
+      /** 
+       * 活动数据 
+       */
+      var ActData = {
+        code: "", // 分享海报code
+        userImg: "", // 用户头像
+        userName: "", // 用户昵称
+        allAward: [
+          // { iconId: 1, desc: "奖品描述1", got: false, link: "https://", code: '' }, // link表示领取跳转链接, code：红包封面兑换码
+          // { iconId: 19, desc: "奖品描述2", got: true }, // got表示是否已领取 iconId为1-19
+          // { iconId: 18, desc: "奖品描述2", got: true }, // got表示是否已领取 iconId为1-19
+          // { iconId: 17, desc: "字谜奖励", got: false }, // iconId为 17 表示是字谜奖励
+        ],
+      };
+
+      /** 
+       * 相关函数方案调用
+       */
+      // 显示登录选择弹窗: MXDData.showChooseLogin();
+      // 显示复制链接弹窗: MXDData.copyLink();
+      // 显示问答页对应题目: MXDData.showQa(); // 传入1-3，自动切换到对应的题，默认就是1
+      // 显示抽奖结果弹窗: MXDData.showDrawResultPop({iconId: 1, desc: '奖品描述', drawNum: 2,link: '', code: '' }) // 参数: 奖品图标id,奖品描述, 剩余摇奖次数,跳转领取时为link
+      // 显示答题结果页: MXDData.showQaResult({drawNum: 2, isShared: false, qaChance: 0}) // 参数: 剩余摇奖次数, 是否分享过, 可竞猜次数
+      // 显示摇奖页面：MXDData.showDraw()
+      // 显示落地页：MXDData.showEnd()
+      // 显示通用信息弹窗: MXDData.showMsg
+
+      // 设置下一题按钮回调: MXDData.setNextQaCb(cb); // 回调参数会传入{ titleId: qsIdx, answerId: chooseIdx}
+      // 设置摇签回调(摇一摇后会触发此回调): MXDData.setDrawCb(cb)
+      // 设置任务数据: MXDData.setTaskInfo({login:0, friends: 1, probability: 10, drawNum: 2}) // 参数: 登录游戏, 吸好友, 中奖概率, 剩余摇奖次数
+      // 设置平台规则: MXDData.setRule('wx') MXDData.setRule('qq')
+    </script>
+
+    <% if(MODE == 'tx') { %>
+    <script src="//ossweb-img.qq.com/images/js/PTT/ping_tcss_tgideas_https_min.js"></script>
+    <script src="//ossweb-img.qq.com/images/js/TGMobileShare/TGMobileShare.min.js"></script>
+    <script>
+      //分享参数设置
+      var shareParam = {
+        shareTitle: "test",
+        shareDesc: "test",
+        shareImgUrl: `https://xxx`, //分享icon
+        shareLink: "",
+        actName: "a20230428wzdtz",
+      };
+      TGMobileShare({
+        shareTitle: shareParam.shareTitle, //不设置或设置为空时，页面有title，则调取title
+        shareDesc: shareParam.shareDesc, //不设置或设置为空时，页面有Description，则调取Description
+        shareImgUrl: shareParam.shareImgUrl, //分享图片尺寸200*200，且填写绝对路径
+        shareLink: shareParam.shareLink, //分享链接要跟当前页面同域名(手Q分享有这个要求) ,不设置或设置为空时，默认调取当前URL
+        actName: shareParam.actName, //点击流命名，用于统计分享量，专题一般采用目录名称如a20151029demo
+      });
+      var setSite = {
+        //设置网站属性
+        siteType: "a20230428wzdtz", //必填项:"os"代表是官网，如果不是，则填写actName例如a20160701xxx
+        pageType: "index", //必填项:本页面的定位；按照页面含义填写例如main||list||detail||download||share||page1||pageN
+        pageName: "主页", //必填项:页面中文名
+        project: "other", //选填项:如果是官网模块则是必填;按照模块内容，填写固定的对应值;原生官网base;微社区ingame;同人站doujin;赛事match;故事站story;文化站history;粉丝站fans;爆料站coming;论坛bbs;默认other;
+      };
+      if (typeof pgvMain == "function") pgvMain();
+    </script>
+    <% } %>
+  </body>
+</html>
