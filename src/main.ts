@@ -6,10 +6,11 @@ createApp(App).mount("#app");
 /** ------ VUE 模式 end ------ */
 
 import { Audios } from "./Config";
-import { loadFiles } from "./utils/loadFiles";
+import { PreloadImgs } from "./utils/PreloadImgs";
 import { getQuery } from "senyou-tool";
 
 /** 是否开发环境 */
+// @ts-ignore
 const IsDev = location.href.indexOf("qq.com") < 0;
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -18,17 +19,18 @@ window.addEventListener("DOMContentLoaded", () => {
 async function loadAss() {
     // 加载首批资源
     const line = $(".m_loading .mid_wrap .prs_wrap .line");
-    loadFiles(["index/"], (prs: number) => line.css("width", prs + "%"))
+    await PreloadImgs(["index/"], (prs: number) => line.css("width", prs + "%"))
     loaded();
 
     // 初始化audio
     Audios.init();
 
     // 分步加载其他资源
-    // await loadFiles(["choose/trans_climbing", "result_lottery/gold"]);
-    // loadFiles(["choose/trans_kayak", "choose/shooting", "choose/running", "choose/trans_running", "choose/trans_shooting"]);
+    await PreloadImgs(["choose/"]);
+    // PreloadImgs(["choose/trans_kayak", "choose/shooting", "choose/running", "choose/trans_running", "choose/trans_shooting"]);
 }
 
+/** 首次加载完毕 */
 function loaded() {
     //
     console.log('-loaded-');

@@ -50,11 +50,21 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
                 chunkFileNames: "assets/[name].js",
                 entryFileNames: "assets/[name].js",
                 assetFileNames: "assets/[name].[ext]",
+                manualChunks: (id) => {
+                  if (id.includes("node_modules")) {
+                    return "vendor";
+                  }
+                },
               }
             : {
                 chunkFileNames: "[name]-[hash].js",
                 entryFileNames: "[name]-[hash].js",
                 assetFileNames: "[name]-[hash].[ext]",
+                manualChunks: (id) => {
+                  if (id.includes("node_modules")) {
+                    return "vendor";
+                  }
+                },
               },
       },
       outDir: "dist/ossweb-img/",

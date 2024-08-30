@@ -1,7 +1,7 @@
 import { getImg, getQuery } from "senyou-tool";
 import { Howl, Howler } from "howler";
 import gsap from "gsap";
-import { getAssetsFile } from "./utils/loadFiles";
+import { getAssetsFile } from "./utils/PreloadImgs";
 
 /** 小动画-加载中 */
 window.showLoading = (isShow: boolean) => {
@@ -78,7 +78,6 @@ $(".active_js").on("touchstart", (e) => {
     scale: 0.87,
     duration: 0.1,
   });
-  // effect.play();
 });
 $(".active_js").on("touchend", (e) => {
   gsap.to(e.target, {
