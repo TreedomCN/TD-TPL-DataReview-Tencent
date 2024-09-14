@@ -1,6 +1,19 @@
-# 腾讯数据回顾类交互模板
+# 【TD】腾讯基础重构类项目模板
 
 ### 一、依赖安装
+
+使用`pnpm`包管理工具 https://www.pnpm.cn/
+
+设置源
+
+```bash
+# 国内 淘宝 镜像源
+pnpm config set registry https://registry.npmmirror.com/
+# 官方镜像源
+pnpm config set registry https://registry.npmjs.org/
+```
+
+安装依赖
 
 ```javascript
 pnpm i
