@@ -61,7 +61,7 @@
 
     <script>
       /** 
-       * 活动数据 
+       * 活动数据 ActData对，命名为示意，可更具具体活动调整命名，如LoLActData
        */
       var ActData = {
         code: "", // 分享海报code
@@ -76,21 +76,21 @@
       };
 
       /** 
-       * 相关函数方案调用
+       * 相关函数方案调用，挂载到ActData上，尽量避免全局window
        */
-      // 显示登录选择弹窗: MXDData.showChooseLogin();
-      // 显示复制链接弹窗: MXDData.copyLink();
-      // 显示问答页对应题目: MXDData.showQa(); // 传入1-3，自动切换到对应的题，默认就是1
-      // 显示抽奖结果弹窗: MXDData.showDrawResultPop({iconId: 1, desc: '奖品描述', drawNum: 2,link: '', code: '' }) // 参数: 奖品图标id,奖品描述, 剩余摇奖次数,跳转领取时为link
-      // 显示答题结果页: MXDData.showQaResult({drawNum: 2, isShared: false, qaChance: 0}) // 参数: 剩余摇奖次数, 是否分享过, 可竞猜次数
-      // 显示摇奖页面：MXDData.showDraw()
-      // 显示落地页：MXDData.showEnd()
-      // 显示通用信息弹窗: MXDData.showMsg
+      // 显示登录选择弹窗: ActData.showChooseLogin();
+      // 显示复制链接弹窗: ActData.copyLink();
+      // 显示问答页对应题目: ActData.showQa(); // 传入1-3，自动切换到对应的题，默认就是1
+      // 显示抽奖结果弹窗: ActData.showDrawResultPop({iconId: 1, desc: '奖品描述', drawNum: 2,link: '', code: '' }) // 参数: 奖品图标id,奖品描述, 剩余摇奖次数,跳转领取时为link
+      // 显示答题结果页: ActData.showQaResult({drawNum: 2, isShared: false, qaChance: 0}) // 参数: 剩余摇奖次数, 是否分享过, 可竞猜次数
+      // 显示摇奖页面：ActData.showDraw()
+      // 显示落地页：ActData.showEnd()
+      // 显示通用信息弹窗: ActData.showMsg
 
-      // 设置下一题按钮回调: MXDData.setNextQaCb(cb); // 回调参数会传入{ titleId: qsIdx, answerId: chooseIdx}
-      // 设置摇签回调(摇一摇后会触发此回调): MXDData.setDrawCb(cb)
-      // 设置任务数据: MXDData.setTaskInfo({login:0, friends: 1, probability: 10, drawNum: 2}) // 参数: 登录游戏, 吸好友, 中奖概率, 剩余摇奖次数
-      // 设置平台规则: MXDData.setRule('wx') MXDData.setRule('qq')
+      // 设置下一题按钮回调: ActData.setNextQaCb(cb); // 回调参数会传入{ titleId: qsIdx, answerId: chooseIdx}
+      // 设置摇签回调(摇一摇后会触发此回调): ActData.setDrawCb(cb)
+      // 设置任务数据: ActData.setTaskInfo({login:0, friends: 1, probability: 10, drawNum: 2}) // 参数: 登录游戏, 吸好友, 中奖概率, 剩余摇奖次数
+      // 设置平台规则: ActData.setRule('wx') ActData.setRule('qq')
     </script>
 
     <% if(MODE == 'tx') { %>
