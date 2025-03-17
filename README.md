@@ -21,7 +21,7 @@ pnpm i
 
 ### 二、体验链接自动化部署
 
-一行命令自动资源到七牛，部署html到FTP
+一行命令自动部署媒体资源与html文件
 
 #### 1、安装七牛Qshell、并设置密钥
 
@@ -29,7 +29,7 @@ pnpm i
 
 #### 2、配置七牛本地文件 `.qshell.json`
 
-**注意：**key_prefix需要自定义，以保证不同项目的路径唯一；
+**注意：** key_prefix需要自定义，以保证不同项目的路径唯一；
 
 ```javascript
 {
@@ -45,7 +45,7 @@ pnpm i
 2. 前往用户.ssh根目录，复制.id_rsa密钥放置在项目根目录上一层级，
 3. 配置正确的服务器地址上传路径，如`/developmemt/xxx.treedom.cn`
 
-#### 4、配置vite base资源地址 `vite.config.ts`
+#### 4、配置 `vite.config.ts` 中 base资源地址 
 
-配置`base`为正确的cdn资源地址（一般为七牛地址+`key_prefix`）
+配置`base`为正确的cdn资源地址（一般为七牛CDN源地址+`key_prefix`）
 
