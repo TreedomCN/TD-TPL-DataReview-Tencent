@@ -44,29 +44,62 @@ body {
 
 */
 
-/* 兼容不支持vw的设备---start */
+/* --- 兼容不支持vw的设备 start --- */
 html {
   font-size: 50PX;
 }
-
 @media screen and (max-width: 768px) and (min-width: 414px) {
   html {
     font-size: 55.2PX;
   }
 }
+/* --- 兼容不支持vw的设备 end --- */
 
-/* 兼容不支持vw的设备---end */
-
-/* 设计稿750px对应100vw 倍率100 */
-html {
-  font-size: 13.3333333333333vw;
+/* --- 移动端竖版，设计稿750px对应100vw，倍率100 start --- */
+@media screen and (max-width: 768px) {
+  html {
+    font-size: 13.333vw;
+  }
 }
-
 @media screen and (max-height: 600px) and (min-height: 310px) {
   html {
     font-size: 12.33333vw;
   }
 }
+/* --- 移动端竖版，设计稿750px对应100vw，倍率100 end --- */
+
+
+/* --- PC端，设计稿1920px对应100vw，倍率100 start --- */
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 5.2vw;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 60PX;
+  }
+}
+
+@media all and (min-aspect-ratio: ~'375/580') and (max-width: 1024px) {
+  html {
+    font-size: 12vw;
+  }
+}
+
+@media all and (min-aspect-ratio: ~'375/550') and (max-width: 1024px) {
+  html {
+    font-size: 10.6vw;
+  }
+}
+
+@media all and (min-aspect-ratio: ~'375/480') and (max-width: 1024px) {
+  html {
+    font-size: 10vw;
+  }
+}
+/* --- PC端，设计稿1920px对应100vw，倍率100 end --- */
 
 // 横屏
 // 安全区1130*680
@@ -107,19 +140,7 @@ html {
 }
 
 
-// 竖屏布局相关，慎删；
-.m_vertical {
-  transform-origin: center center;
-
-  .m_wrap {
-    position: relative;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-  }
-}
-
-// 横屏布局相关，慎删；
+// 横屏布局
 .m_horizontal {
   transform-origin: center center;
   transform: rotate(90deg);
@@ -141,19 +162,6 @@ html {
       .m_wrap {
         width: 100vw;
         height: 100vh;
-      }
-    }
-
-    .m_share-wrap {
-      .content-text {
-        left: auto;
-        right: 40px;
-      }
-
-      .content-img {
-        left: auto;
-        right: 0px;
-        transform: scaleX(1);
       }
     }
   }

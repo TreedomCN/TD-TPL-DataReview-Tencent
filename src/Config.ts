@@ -99,15 +99,15 @@ export const Audios = {
   bgm: {} as Howl,
   efect: {} as Howl,
   init: () => {
-    Audios.bgm = new Howl({
-      src: getAssetsFile("media/bgm.mp3"),
-      loop: true,
-      autoplay: !getQuery('to'), // 不存在调试参数时，自动播放
-      volume: 0.5,
-      onplay: () => {
-        // $(".top_menu .btn_music").removeClass("off");
-      },
-    });
+    // Audios.bgm = new Howl({
+    //   src: getAssetsFile("media/bgm.mp3"),
+    //   loop: true,
+    //   autoplay: !getQuery('to'), // 不存在调试参数时，自动播放
+    //   volume: 0.5,
+    //   onplay: () => {
+    //     // $(".top_menu .btn_music").removeClass("off");
+    //   },
+    // });
   },
   changeMute: () => {
     if (Audios.isMuted) {
