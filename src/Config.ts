@@ -1,7 +1,7 @@
 import { getImg, getQuery } from "senyou-tool";
 import { Howl, Howler } from "howler";
 import gsap from "gsap";
-import { getAssetsFile } from "./utils/PreloadImgs";
+// import { getAssetsFile } from "./utils/PreloadImgs";
 
 /** 小动画-加载中 */
 window.showLoading = (isShow: boolean) => {
@@ -99,6 +99,7 @@ export const Audios = {
   bgm: {} as Howl,
   efect: {} as Howl,
   init: () => {
+    console.log(getQuery('to'));
     // Audios.bgm = new Howl({
     //   src: getAssetsFile("media/bgm.mp3"),
     //   loop: true,

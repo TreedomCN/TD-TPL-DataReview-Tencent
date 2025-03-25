@@ -17,6 +17,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       }),
       legacy({
         targets: ["defaults", "not IE 11", "iOS >= 10.3", "safari >= 10", "Android > 39"],
+        renderLegacyChunks: false
       }),
     ],
 
