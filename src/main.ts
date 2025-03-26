@@ -1,4 +1,6 @@
 import "./style.less";
+import "./style.scss";
+
 import { Audios } from "./Config";
 import { PreloadImgs } from "./utils/PreloadImgs";
 import { getQuery } from "senyou-tool";

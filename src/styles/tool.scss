@@ -1,0 +1,101 @@
+@use 'sass:math';
+@function PXtoREM($px) {
+  @return $px * 1px;
+  // @return math.div($px, 100) * 1rem;
+}
+
+$baseUrl: "../ossweb-img/";
+// $baseUrl: "@/";
+
+@function setImg($src) {
+  @return url(#{$baseUrl+$src}) no-repeat 0 0/100% 100%;
+}
+
+@mixin ab_tr_center($options: null) {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) $options;
+}
+@mixin top_center($options: null) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) $options;
+}
+@mixin left_center($options: null) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) $options;
+}
+@mixin top_left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@mixin text_hide($num: 2) {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: $num;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+@mixin txt_hide {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+$font1: 'FZLTZHUNHK';
+$font2: 'zsctb';
+$font3: 'zsctm';
+
+%lineBottom {
+  width: 100%;
+  height: PXtoREM(3);
+  background: rgba($color: #eaebeb, $alpha: 0.1);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  &::after,
+  &::before {
+    content: '';
+    width: PXtoREM(12);
+    height: 100%;
+    background: rgba($color: #eaebeb, $alpha: 0.6);
+    @include top_left();
+  }
+  &::after {
+    left: auto;
+    right: 0;
+  }
+}
+%scrollBox {
+  /* 整个滚动条 */
+  &::-webkit-scrollbar {
+    width: PXtoREM(8); /* 对于垂直滚动条，设置宽度 */
+  }
+
+  /* 滚动条轨道 */
+  &::-webkit-scrollbar-track {
+    background: rgba($color: #eaebeb, $alpha: 0.1); /* 背景色 */
+  }
+
+  /* 滚动条滑块 */
+  &::-webkit-scrollbar-thumb {
+    background: rgba($color: #eaebeb, $alpha: 0.3); /* 滑块颜色 */
+  }
+}
+%outBg {
+  width: PXtoREM(3840);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  pointer-events: none;
+  background: setImg('all-bg.jpg');
+  background-size: 100% auto;
+  background-color: #080c0e;
+}

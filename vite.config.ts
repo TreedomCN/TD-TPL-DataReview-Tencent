@@ -14,6 +14,11 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       vue(),
       createHtmlPlugin({
         minify: false,
+        inject: {
+          data: {
+            CURRENT_DATE: new Date().toISOString().split('T')[0],
+          },
+        },
       }),
       legacy({
         targets: ["defaults", "not IE 11", "iOS >= 10.3", "safari >= 10", "Android > 39"],
@@ -26,6 +31,12 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         less: {
           additionalData: '@import "/src/styles/common.less";',
         },
+        scss: {
+          sassOptions: {
+            quietDeps: true,
+            outputStyle: 'expanded'
+          }
+        },
       },
       postcss: {
         plugins: [
@@ -36,6 +47,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         ],
       },
     },
+    
 
     base: isBuild ? (mode === "tx" ? "//game.gtimg.cn/images/ymzx/web202312pc/" : "//qrtss.treedom.cn/a20240107act/") : "/",
 
