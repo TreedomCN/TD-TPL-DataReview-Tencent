@@ -1,5 +1,5 @@
-import * as fs from 'fs';
-import Client from 'ssh2-sftp-client';
+let fs = require('fs');
+let Client = require('ssh2-sftp-client');
 let sftp = new Client();
 
 sftp.connect({
