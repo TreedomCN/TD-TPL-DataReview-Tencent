@@ -17,6 +17,10 @@
   touch-action: none;
 }
 
+img{
+  -webkit-touch-callout: default;
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -76,29 +80,29 @@ html {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  html {
-    font-size: 60PX;
-  }
-}
+// @media screen and (min-width: 768px) and (max-width: 1024px) {
+//   html {
+//     font-size: 60PX;
+//   }
+// }
 
-@media all and (min-aspect-ratio: ~'375/580') and (max-width: 1024px) {
-  html {
-    font-size: 12vw;
-  }
-}
+// @media all and (min-aspect-ratio: ~'375/580') and (max-width: 1024px) {
+//   html {
+//     font-size: 12vw;
+//   }
+// }
 
-@media all and (min-aspect-ratio: ~'375/550') and (max-width: 1024px) {
-  html {
-    font-size: 10.6vw;
-  }
-}
+// @media all and (min-aspect-ratio: ~'375/550') and (max-width: 1024px) {
+//   html {
+//     font-size: 10.6vw;
+//   }
+// }
 
-@media all and (min-aspect-ratio: ~'375/480') and (max-width: 1024px) {
-  html {
-    font-size: 10vw;
-  }
-}
+// @media all and (min-aspect-ratio: ~'375/480') and (max-width: 1024px) {
+//   html {
+//     font-size: 10vw;
+//   }
+// }
 /* --- PC端，设计稿1920px对应100vw，倍率100 end --- */
 
 // 横屏
@@ -127,42 +131,42 @@ html {
 //   }
 // }
 
-@media all and (min-aspect-ratio: ~'1334/646') and (orientation:landscape) {
-  html {
-    font-size: 6.25vw;
-  }
-}
+// @media all and (min-aspect-ratio: ~'1334/646') and (orientation:landscape) {
+//   html {
+//     font-size: 6.25vw;
+//   }
+// }
 
-@media all and (max-aspect-ratio: ~'1334/646') and (orientation:landscape) {
-  html {
-    font-size: 13.33vh;
-  }
-}
+// @media all and (max-aspect-ratio: ~'1334/646') and (orientation:landscape) {
+//   html {
+//     font-size: 13.33vh;
+//   }
+// }
 
 
 // 横屏布局
-.m_horizontal {
-  transform-origin: center center;
-  transform: rotate(90deg);
+// .m_horizontal {
+//   transform-origin: center center;
+//   transform: rotate(90deg);
 
-  .m_wrap {
-    position: relative;
-    overflow: hidden;
-    width: 100vh;
-    height: 100vw;
-  }
-}
+//   .m_wrap {
+//     position: relative;
+//     overflow: hidden;
+//     width: 100vh;
+//     height: 100vw;
+//   }
+// }
 
 // 横屏
-@media all and (orientation:landscape) {
-  html {
-    .m_horizontal {
-      transform: rotate(0deg);
+// @media all and (orientation:landscape) {
+//   html {
+//     .m_horizontal {
+//       transform: rotate(0deg);
 
-      .m_wrap {
-        width: 100vw;
-        height: 100vh;
-      }
-    }
-  }
-}
+//       .m_wrap {
+//         width: 100vw;
+//         height: 100vh;
+//       }
+//     }
+//   }
+// }

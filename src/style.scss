@@ -1,77 +1,14 @@
 @use "./styles/tool" as *;
 
-@font-face {
-  font-family: 'FZLTZHUNHK';
-  src: url($baseUrl+'font/FZLTZHUNHK.TTF');
-}
+// @font-face {
+//   font-family: 'FZLTZHUNHK';
+//   src: url($baseUrl+'font/FZLTZHUNHK.TTF');
+// }
 
-.wrap {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-html {
-  --scaleBg: 1;
-  --scaleCent: 1;
-}
 body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   position: relative;
 }
-a:hover {
-  filter: brightness(1.1);
-}
 
-.wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.bg {
-  width: PXtoREM(1920);
-  height: PXtoREM(1080);
-  @include ab_tr_center(scale(var(--scaleBg)));
-  z-index: -1;
-}
-
-.dia5 {
-  width: PXtoREM(619);
-  height: PXtoREM(361);
-  background: #000;
-  .dia-cent {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: PXtoREM(30);
-    color: #fff;
-  }
-}
-
-@keyframes scaleAni {
-  0% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1.05);
-  }
-}
-@keyframes showAni {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes showAni2 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
-  }
-}
